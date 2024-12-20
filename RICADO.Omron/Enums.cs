@@ -36,6 +36,10 @@ namespace RICADO.Omron
         Work = 0x31,
         Holding = 0x32,
         Auxiliary = 0x33,
+        ExtendedMemory_Bank0 = 0x20,
+        ExtendedMemory_Bank1 = 0x21,
+        ExtendedMemory_Bank2 = 0x22,
+        ExtendedMemory_Bank3 = 0x23,
     }
 
     public enum enMemoryWordDataType : byte
@@ -45,6 +49,10 @@ namespace RICADO.Omron
         Work = 0xB1,
         Holding = 0xB2,
         Auxiliary = 0xB3,
+        ExtendedMemory_Bank0 = 0xA0,
+        ExtendedMemory_Bank1 = 0xA1,
+        ExtendedMemory_Bank2 = 0xA2,
+        ExtendedMemory_Bank3 = 0xA3,
     }
 
     internal enum enFunctionCode : byte

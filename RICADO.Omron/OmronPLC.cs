@@ -616,6 +616,10 @@ namespace RICADO.Omron
                 enMemoryBitDataType.Work => address < 512,
                 enMemoryBitDataType.Holding => address < 1536,
                 enMemoryBitDataType.Auxiliary => address < (_plcType == enPLCType.CJ2 ? 11536 : 960),
+                enMemoryBitDataType.ExtendedMemory_Bank0 => address < 32768,
+                enMemoryBitDataType.ExtendedMemory_Bank1 => address < 32768,
+                enMemoryBitDataType.ExtendedMemory_Bank2 => address < 32768,
+                enMemoryBitDataType.ExtendedMemory_Bank3 => address < 32768,
                 _ => false,
             };
         }
@@ -629,6 +633,10 @@ namespace RICADO.Omron
                 enMemoryBitDataType.Work => true,
                 enMemoryBitDataType.Holding => true,
                 enMemoryBitDataType.Auxiliary => !IsNSeries,
+                enMemoryBitDataType.ExtendedMemory_Bank0 => true,
+                enMemoryBitDataType.ExtendedMemory_Bank1 => true,
+                enMemoryBitDataType.ExtendedMemory_Bank2 => true,
+                enMemoryBitDataType.ExtendedMemory_Bank3 => true,
                 _ => false,
             };
         }
@@ -642,6 +650,10 @@ namespace RICADO.Omron
                 enMemoryWordDataType.Work => startAddress + (length - 1) < 512,
                 enMemoryWordDataType.Holding => startAddress + (length - 1) < 1536,
                 enMemoryWordDataType.Auxiliary => startAddress + (length - 1) < (_plcType == enPLCType.CJ2 ? 11536 : 960),
+                enMemoryWordDataType.ExtendedMemory_Bank0 => startAddress + (length - 1) < 32768,
+                enMemoryWordDataType.ExtendedMemory_Bank1 => startAddress + (length - 1) < 32768,
+                enMemoryWordDataType.ExtendedMemory_Bank2 => startAddress + (length - 1) < 32768,
+                enMemoryWordDataType.ExtendedMemory_Bank3 => startAddress + (length - 1) < 32768,
                 _ => false,
             };
         }
@@ -653,9 +665,14 @@ namespace RICADO.Omron
                 enMemoryWordDataType.DataMemory => true,
                 enMemoryWordDataType.CommonIO => true,
                 enMemoryWordDataType.Work => true,
-                enMemoryWordDataType.Holding => true,
+                enMemoryWordDataType.Holding => true,                
                 enMemoryWordDataType.Auxiliary => !IsNSeries,
+                enMemoryWordDataType.ExtendedMemory_Bank0 => true,
+                enMemoryWordDataType.ExtendedMemory_Bank1 => true,
+                enMemoryWordDataType.ExtendedMemory_Bank2 => true,
+                enMemoryWordDataType.ExtendedMemory_Bank3 => true,
                 _ => false,
+                
             };
         }
 
